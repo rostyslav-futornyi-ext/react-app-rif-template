@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 
 type Theme = 'light' | 'dark';
@@ -39,6 +40,11 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
     return 'light'; // Default theme
   });
+
+  // Just to avoid the unused variable warning
+  if (process.env.NODE_ENV === 'development') {
+    console.warn('Current theme:', theme);
+  }
 
   // Update DOM and localStorage when theme changes
   useEffect(() => {

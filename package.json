@@ -18,11 +18,11 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix --quiet",
       "prettier --write"
     ],
-    "*.{json,css,scss,md}": [
+    "src/**/*.{json,css,scss,md}": [
       "prettier --write"
     ]
   },

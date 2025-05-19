@@ -81,8 +81,7 @@ export const useAuthStore = create<AuthState>()(
 
       signup: async (
         email: string,
-        /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
-        password: string,
+        password: string, // eslint-disable-line no-unused-vars
         name: string,
       ) => {
         try {
