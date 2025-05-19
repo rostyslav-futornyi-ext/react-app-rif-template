@@ -34,7 +34,6 @@ module.exports = {
     'react/require-default-props': 'off',
     'prettier/prettier': 'error',
     'no-console': ['warn', { allow: ['warn', 'error'] }],
-    'no-unused-vars': 'off',
   },
   globals: {
     describe: 'readonly',
