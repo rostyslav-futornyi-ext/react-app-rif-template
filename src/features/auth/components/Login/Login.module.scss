@@ -1,0 +1,59 @@
+@use '@/styles/variables' as vars;
+
+.loginContainer {
+  max-width: 500px;
+  margin: vars.$space-xl auto;
+  border-radius: vars.$radius-lg;
+  overflow: hidden;
+  background-color: var(--color-background);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+  width: 100%;
+}
+
+.tabsList {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tabsTrigger {
+  flex: 1;
+  padding: vars.$space-md;
+  background: none;
+  border: none;
+  font-size: vars.$font-md;
+  font-weight: 500;
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  &[data-state='active'] {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+  }
+}
+
+.tabsContent {
+  padding: vars.$space-md;
+}
+
+.comingSoon {
+  padding: vars.$space-xl vars.$space-md;
+  text-align: center;
+
+  h3 {
+    color: var(--color-primary);
+    margin-bottom: vars.$space-md;
+  }
+
+  p {
+    color: var(--color-text-light);
+  }
+}

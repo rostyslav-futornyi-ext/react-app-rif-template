@@ -1,0 +1,74 @@
+@use '../../../../styles/variables' as vars;
+
+.loginForm {
+  width: 100%;
+  max-width: 400px;
+  padding: vars.$space-lg;
+  border-radius: vars.$radius-lg;
+  background-color: var(--color-background-light);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  &__title {
+    font-size: vars.$font-2xl;
+    margin-bottom: vars.$space-lg;
+    text-align: center;
+    color: var(--color-primary);
+  }
+
+  &__error {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--color-error);
+    padding: vars.$space-sm;
+    border-radius: vars.$radius-md;
+    margin-bottom: vars.$space-md;
+    font-size: vars.$font-sm;
+    text-align: center;
+  }
+
+  &__field {
+    margin-bottom: vars.$space-md;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: vars.$space-xs;
+    font-size: vars.$font-sm;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  &__input {
+    width: 100%;
+    padding: vars.$space-sm;
+    border: 1px solid var(--color-border);
+    border-radius: vars.$radius-md;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
+    }
+
+    &::placeholder {
+      color: var(--color-text-light);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+
+  &__submit {
+    margin-top: vars.$space-lg;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .loginForm {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+}

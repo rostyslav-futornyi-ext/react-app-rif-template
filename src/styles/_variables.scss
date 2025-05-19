@@ -1,0 +1,84 @@
+/* Color Variables */
+:root {
+  /* Theme colors */
+  --color-primary: #646cff;
+  --color-primary-dark: #535bf2;
+  --color-secondary: #5a95ff;
+  --color-accent: #ff6b6b;
+  --color-success: #28a745;
+  --color-warning: #ffc107;
+  --color-error: #dc3545;
+  --color-info: #17a2b8;
+
+  /* Light theme (default) */
+  --color-background: #ffffff;
+  --color-background-dark: #f8f9fa;
+  --color-background-light: #f0f0f0;
+  --color-text: #213547;
+  --color-text-light: #666666;
+  --color-border: #e6e6e6;
+}
+
+/* Dark theme */
+[data-theme='dark'] {
+  --color-background: #242424;
+  --color-background-dark: #1a1a1a;
+  --color-background-light: #2f2f2f;
+  --color-text: rgba(255, 255, 255, 0.87);
+  --color-text-light: rgba(255, 255, 255, 0.6);
+  --color-border: #3d3d3d;
+}
+
+/* Keep the media query as fallback for browsers without JS */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-background: #242424;
+    --color-background-dark: #1a1a1a;
+    --color-background-light: #2f2f2f;
+    --color-text: rgba(255, 255, 255, 0.87);
+    --color-text-light: rgba(255, 255, 255, 0.6);
+    --color-border: #3d3d3d;
+  }
+}
+
+/* Spacing */
+$space-xs: 0.25rem; /* 4px */
+$space-sm: 0.5rem; /* 8px */
+$space-md: 1rem; /* 16px */
+$space-lg: 1.5rem; /* 24px */
+$space-xl: 2rem; /* 32px */
+$space-2xl: 2.5rem; /* 40px */
+$space-3xl: 3rem; /* 48px */
+
+/* Font sizes */
+$font-xs: 0.75rem; /* 12px */
+$font-sm: 0.875rem; /* 14px */
+$font-md: 1rem; /* 16px */
+$font-lg: 1.125rem; /* 18px */
+$font-xl: 1.25rem; /* 20px */
+$font-2xl: 1.5rem; /* 24px */
+$font-3xl: 1.875rem; /* 30px */
+$font-4xl: 2.25rem; /* 36px */
+
+/* Border radius */
+$radius-sm: 0.125rem; /* 2px */
+$radius-md: 0.25rem; /* 4px */
+$radius-lg: 0.5rem; /* 8px */
+$radius-xl: 1rem; /* 16px */
+$radius-full: 9999px;
+
+/* Breakpoints */
+$breakpoint-xs: 320px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-2xl: 1400px;
+
+/* Z-index levels */
+$z-negative: -1;
+$z-lowest: 1;
+$z-low: 10;
+$z-mid: 100;
+$z-high: 1000;
+$z-highest: 10000;

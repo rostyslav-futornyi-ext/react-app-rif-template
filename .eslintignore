@@ -1,0 +1,16 @@
+# Build output
+dist/
+build/
+
+# Node modules
+node_modules/
+
+# Test coverage
+coverage/
+reports/
+
+# Husky hooks
+.husky/pre-commit-fancy.js
+
+# Configuration files
+vite.config.ts 

@@ -3,97 +3,188 @@
 </p>
 <h3 align="middle"><code>react-app-rif-template</code></h3>
 <p align="middle">
-  React.js template with Typescript, Sass, Enzyme, ESlint and CircleCI
+  Modern React template with Vite, TypeScript, SCSS Modules, Radix UI, Vitest, and more
 </p>
 <p align="middle">
   <a href="https://github.com/rsksmart/react-app-rif-template/actions/workflows/ci.yml">
-    <img src="https://github.com/rsksmart/react-app-rif-template/actions/workflows/ci.yml/badge.svg" alt="npm" />
-  </a>
-  <a href="https://lgtm.com/projects/g/rsksmart/react-app-rif-template/alerts/">
-    <img src="https://img.shields.io/lgtm/alerts/github/rsksmart/react-app-rif-template" alt="Alerts">
-  </a>
-  <a href="https://lgtm.com/projects/g/rsksmart/react-app-rif-template/context:javascript">
-    <img src="https://img.shields.io/lgtm/grade/javascript/github/rsksmart/react-app-rif-template" alt="Code Quality">
+    <img src="https://github.com/rsksmart/react-app-rif-template/actions/workflows/ci.yml/badge.svg" alt="CI Status" />
   </a>
 </p>
 
-Use this template to create a [`create-react-app`](https://es.reactjs.org/docs/create-a-new-react-app.html) with configuration ready for:
-- [Typescript](https://www.typescriptlang.org/) - static type definitions for JavaScript
-- [Sass](https://sass-lang.com/) - CSS pre-processor
-- [Enzyme](https://enzymejs.github.io/enzyme/) - JavaScript Testing utility for React*
-- [ESLint](https://eslint.org/) - linter tool for identifying and reporting on patterns in JavaScript
-- [CircleCI](https://circleci.com/) - continuous integration and delivery platform
+<div align="center">
+  <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white" alt="SASS" />
+  <img src="https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" />
+  <img src="https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" />
+</div>
 
-## Usage
+## 🚀 Features
 
-This repo is to be used as a tempalte. It has setup for the tools mentioned above, cinluding CircleCI flow
+This template provides a robust foundation for modern React applications with:
 
-1. Create a new repo using this one as a template
+- ⚡️ **[Vite](https://vitejs.dev/)** - Lightning fast build tool
+- 🔷 **[TypeScript](https://www.typescriptlang.org/)** - Static type checking
+- 🎨 **[SCSS Modules](https://sass-lang.com/)** - Component-scoped styles
+- 🧩 **BEM methodology** - Consistent CSS architecture
+- 🧰 **[Radix UI](https://www.radix-ui.com/)** - Accessible headless UI components
+- ✅ **[Vitest](https://vitest.dev/)** - Modern testing framework
+- 🔍 **[ESLint](https://eslint.org/) + [Prettier](https://prettier.io/)** - Code quality
+- 🐶 **[Husky](https://typicode.github.io/husky/)** - Git hooks for code quality
+- 📂 **Feature-oriented folder structure** - Organized scalable architecture
+- 🔄 **GitHub Actions** - CI/CD workflows
 
-  ![Update Shield URLs](../main/docs/use-template-button.jpg)
+## 📋 Project Structure
 
-2. Update the shields on the header to point your urls
+This template follows a feature-oriented architecture, organizing code by domain features rather than technical types.
 
-  ![Update Shield URLs](../main/docs/update-badge-urls.jpg)
+```
+src/
+├── assets/         # Static assets (images, fonts, etc.)
+├── components/     # Shared components
+│   ├── ui/         # Low-level UI components
+│   └── shared/     # Higher-level shared components
+├── config/         # App configuration
+├── features/       # Feature-based modules
+│   └── auth/       # Example feature
+│       ├── api/        # API integrations
+│       ├── components/ # Feature-specific components
+│       ├── hooks/      # Feature-specific hooks
+│       ├── types/      # Type definitions
+│       └── index.ts    # Feature entry point
+├── hooks/          # Shared hooks
+├── lib/            # Third-party library wrappers
+├── styles/         # Global styles
+│   ├── _variables.scss  # Design tokens
+│   ├── _base.scss       # Base element styles
+│   ├── _reset.scss      # CSS reset
+│   ├── _utils.scss      # Utility classes
+│   └── index.scss       # Main style entry
+├── types/          # Global type definitions
+├── utils/          # Utility functions
+├── App.tsx         # Main App component
+├── main.tsx        # Application entry point
+└── vite-env.d.ts   # Vite type definitions
+```
 
-3. Start coding!
+## 🛠️ Getting Started
 
-## Available Scripts
+### Prerequisites
 
-### `yarn`
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/)
 
-Install project dependencies
+### Installation
 
-## Available Scripts
+```bash
+# Clone the repository using this template
+git clone https://github.com/your-username/your-project.git
+cd your-project
+
+# Install dependencies
+yarn install
+```
+
+## 📝 Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn dev`
 
-Runs the app in the development mode.
+Runs the app in development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Runs the tests, displays coverage, and runs the linter. See below for more specific commands
-
-#### `yarn test:watch`
-
-Launches the test runner in the interactive watch mode.
-
-#### `yarn test:coverage`
-
-Runs the test coverage and saves the report in the`coverage` folder.
-
-#### `yarn lint`
-
-Runs the linter and returns status.
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `dist` folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `yarn preview`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Locally preview the production build.
 
-### CI scripts
+### `yarn test`
 
-#### `yarn test:ci`
+Runs the test suite.
 
-Runs the test coverage and saves the report in the`reports` folder. Uses `maxWorkers=2` - CircleCI recommendation
+### `yarn test:watch`
 
-#### `yarn test:ci`
+Runs tests in watch mode for development.
 
-Runs the linter and saves the report in the`reports` folder.
+### `yarn test:coverage`
 
-## Knowledge base
+Run tests and generate coverage reports.
 
-This project was bootstrapped with the Typescript tempalte of [Create React App](https://github.com/facebook/create-react-app) and added Eslint, CircleCI, and Enzyme testing utility.
+### `yarn lint`
 
-Current React.js version: `v17.0.1`, but Enzyme is set up for `v16` - this will be upgraded when Enzyme releases a new version.
+Checks code for linting errors.
+
+### `yarn lint:fix`
+
+Automatically fixes linting errors when possible.
+
+### `yarn format`
+
+Formats code with Prettier.
+
+## 📏 Code Quality
+
+This template enforces high code quality standards with:
+
+- ESLint for code linting
+- Prettier for consistent formatting
+- TypeScript for type safety
+- Husky for pre-commit hooks
+- Test coverage thresholds to maintain test quality:
+  ```json
+  "thresholds": {
+    "global": {
+      "statements": 80,
+      "branches": 80,
+      "lines": 80,
+      "functions": 80
+    }
+  }
+  ```
+
+### Git Hooks
+
+This project uses Husky to run pre-commit hooks that enforce code quality, with an enhanced visual experience:
+
+- **pre-commit**: Runs lint-staged and TypeScript checks with color-coded feedback
+
+The pre-commit hook ensures:
+- No ESLint errors in your code
+- TypeScript type checking passes 
+- Proper code formatting with Prettier
+
+The pre-commit process includes:
+- 🎨 Color-coded output for better visibility
+- 📊 Clear success/failure indicators
+- 🚀 Boxed formatting for important messages
+- 🔄 Compatible with the latest Husky version
+
+This prevents committing code with errors or incorrect types while providing a visually pleasing developer experience.
+
+## 🧩 BEM Methodology
+
+This template uses the BEM (Block, Element, Modifier) methodology for CSS naming conventions:
+
+- **Block**: Standalone entity that is meaningful on its own (e.g., `.card`)
+- **Element**: Parts of a block that have no standalone meaning (e.g., `.card__title`)
+- **Modifier**: Flags on blocks or elements for changing appearance (e.g., `.card--featured`)
+
+The included SCSS utils provide helpful mixins for working with BEM.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🙏 Acknowledgements
+
+- [RSK Infrastructure Framework (RIF)](https://www.rifos.org/)
+- [Bulletproof React](https://github.com/alan2207/bulletproof-react) - for the project structure guidance
