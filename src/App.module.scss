@@ -1,0 +1,144 @@
+@use './styles/variables' as vars;
+
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: vars.$space-xl;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: vars.$space-xl;
+
+  h1 {
+    margin-top: vars.$space-md;
+    margin-bottom: vars.$space-md;
+    font-size: vars.$font-3xl;
+    color: var(--color-primary);
+  }
+}
+
+.logo {
+  height: 12rem;
+  will-change: filter;
+  animation: logo-spin 10s linear infinite;
+  transition: filter 0.3s;
+
+  &:hover {
+    filter: drop-shadow(0 0 1em var(--color-primary-dark));
+  }
+}
+
+.tabs {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.tabsList {
+  display: flex;
+  justify-content: center;
+  gap: vars.$space-sm;
+  margin-bottom: vars.$space-lg;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tabsTrigger {
+  padding: vars.$space-md vars.$space-lg;
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+  color: var(--color-text-light);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  &[data-state='active'] {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+.tabsContent {
+  padding: vars.$space-md;
+
+  h2 {
+    margin-bottom: vars.$space-lg;
+    font-size: vars.$font-2xl;
+  }
+
+  p {
+    margin-bottom: vars.$space-md;
+    line-height: 1.6;
+  }
+
+  code {
+    font-weight: 500;
+  }
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-md;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+
+  li {
+    padding: vars.$space-sm;
+    background-color: var(--color-background-light);
+    border-radius: vars.$radius-md;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateX(vars.$space-xs);
+    }
+  }
+}
+
+.card {
+  padding: vars.$space-lg;
+  border-radius: vars.$radius-lg;
+  background-color: var(--color-background-light);
+  margin: 0 auto;
+  max-width: 400px;
+
+  button {
+    margin-bottom: vars.$space-md;
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--color-primary-dark);
+    }
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo {
+    animation: none;
+  }
+}

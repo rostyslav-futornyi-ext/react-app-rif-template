@@ -1,0 +1,227 @@
+@use 'variables' as vars;
+
+/* Utility mixins and classes for BEM methodology */
+
+// BEM Mixins
+@mixin block($block) {
+  .#{$block} {
+    @content;
+  }
+}
+
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// Layout utility classes
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 vars.$space-md;
+}
+
+.flex {
+  display: flex;
+
+  &--center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--between {
+    justify-content: space-between;
+  }
+
+  &--around {
+    justify-content: space-around;
+  }
+
+  &--column {
+    flex-direction: column;
+  }
+}
+
+.grid {
+  display: grid;
+
+  &--center {
+    place-items: center;
+  }
+}
+
+// Spacing utilities
+.mt {
+  &-xs {
+    margin-top: vars.$space-xs;
+  }
+  &-sm {
+    margin-top: vars.$space-sm;
+  }
+  &-md {
+    margin-top: vars.$space-md;
+  }
+  &-lg {
+    margin-top: vars.$space-lg;
+  }
+  &-xl {
+    margin-top: vars.$space-xl;
+  }
+}
+
+.mb {
+  &-xs {
+    margin-bottom: vars.$space-xs;
+  }
+  &-sm {
+    margin-bottom: vars.$space-sm;
+  }
+  &-md {
+    margin-bottom: vars.$space-md;
+  }
+  &-lg {
+    margin-bottom: vars.$space-lg;
+  }
+  &-xl {
+    margin-bottom: vars.$space-xl;
+  }
+}
+
+.ml {
+  &-xs {
+    margin-left: vars.$space-xs;
+  }
+  &-sm {
+    margin-left: vars.$space-sm;
+  }
+  &-md {
+    margin-left: vars.$space-md;
+  }
+  &-lg {
+    margin-left: vars.$space-lg;
+  }
+  &-xl {
+    margin-left: vars.$space-xl;
+  }
+}
+
+.mr {
+  &-xs {
+    margin-right: vars.$space-xs;
+  }
+  &-sm {
+    margin-right: vars.$space-sm;
+  }
+  &-md {
+    margin-right: vars.$space-md;
+  }
+  &-lg {
+    margin-right: vars.$space-lg;
+  }
+  &-xl {
+    margin-right: vars.$space-xl;
+  }
+}
+
+.p {
+  &-xs {
+    padding: vars.$space-xs;
+  }
+  &-sm {
+    padding: vars.$space-sm;
+  }
+  &-md {
+    padding: vars.$space-md;
+  }
+  &-lg {
+    padding: vars.$space-lg;
+  }
+  &-xl {
+    padding: vars.$space-xl;
+  }
+}
+
+// Text utilities
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-left {
+    text-align: left;
+  }
+  &-right {
+    text-align: right;
+  }
+
+  &-primary {
+    color: var(--color-primary);
+  }
+  &-accent {
+    color: var(--color-accent);
+  }
+  &-success {
+    color: var(--color-success);
+  }
+  &-warning {
+    color: var(--color-warning);
+  }
+  &-error {
+    color: var(--color-error);
+  }
+  &-info {
+    color: var(--color-info);
+  }
+
+  &-xs {
+    font-size: vars.$font-xs;
+  }
+  &-sm {
+    font-size: vars.$font-sm;
+  }
+  &-md {
+    font-size: vars.$font-md;
+  }
+  &-lg {
+    font-size: vars.$font-lg;
+  }
+  &-xl {
+    font-size: vars.$font-xl;
+  }
+}
+
+// Responsive utilities
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: vars.$breakpoint-xs) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (min-width: vars.$breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: vars.$breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: vars.$breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: vars.$breakpoint-xl) {
+      @content;
+    }
+  } @else if $breakpoint == 2xl {
+    @media (min-width: vars.$breakpoint-2xl) {
+      @content;
+    }
+  }
+}
