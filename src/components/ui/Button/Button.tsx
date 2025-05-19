@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
+
 import styles from './Button.module.scss';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
@@ -11,7 +12,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
 }
 
-export const Button = ({
+export function Button({
   children,
   variant = 'primary',
   size = 'md',
@@ -20,7 +21,7 @@ export const Button = ({
   className = '',
   disabled,
   ...rest
-}: ButtonProps) => {
+}: ButtonProps) {
   const buttonClasses = [
     styles.button,
     styles[`button--${variant}`],
@@ -34,10 +35,10 @@ export const Button = ({
 
   return (
     <button className={buttonClasses} disabled={disabled || isLoading} {...rest}>
-      {isLoading && <span className={styles['button__loader']} />}
+      {isLoading && <span className={styles.button__loader} />}
       <span className={isLoading ? styles['button__content--loading'] : ''}>{children}</span>
     </button>
   );
-};
+}
 
 export default Button;

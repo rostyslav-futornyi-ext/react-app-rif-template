@@ -1,6 +1,6 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { PropsWithChildren } from 'react';
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from './theme';
 
 // Create a client for React Query
@@ -17,10 +17,10 @@ const queryClient = new QueryClient({
  * AppProvider component that wraps the entire app with necessary providers
  * This helps to keep the index.tsx file clean
  */
-export const AppProvider = ({ children }: PropsWithChildren) => {
+export function AppProvider({ children }: PropsWithChildren) {
   return (
     <ThemeProvider>
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </ThemeProvider>
   );
-};
+}

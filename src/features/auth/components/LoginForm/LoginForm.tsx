@@ -1,5 +1,7 @@
 import { useState, FormEvent } from 'react';
+
 import Button from '@/components/ui/Button';
+
 import styles from './LoginForm.module.scss';
 
 interface LoginFormProps {
@@ -7,7 +9,7 @@ interface LoginFormProps {
   isLoading?: boolean;
 }
 
-export const LoginForm = ({ onSubmit, isLoading = false }: LoginFormProps) => {
+export function LoginForm({ onSubmit, isLoading = false }: LoginFormProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -67,6 +69,6 @@ export const LoginForm = ({ onSubmit, isLoading = false }: LoginFormProps) => {
       </Button>
     </form>
   );
-};
+}
 
 export default LoginForm;

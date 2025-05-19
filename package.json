@@ -2,6 +2,7 @@
   "name": "react-app-rif-template",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -13,7 +14,17 @@
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss}\"",
-    "lint:ci": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --format junit --output-file ./reports/eslint.xml"
+    "lint:ci": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --format junit --output-file ./reports/eslint.xml",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,scss,md}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
@@ -27,6 +38,7 @@
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@tanstack/react-query": "^5.14.2",
+    "@testing-library/jest-dom": "^6.1.5",
     "msw": "^2.8.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -34,7 +46,6 @@
     "zustand": "^5.0.4"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^15.0.7",
     "@testing-library/user-event": "^14.5.1",
     "@types/jest": "^29.5.14",
@@ -45,6 +56,7 @@
     "@typescript-eslint/parser": "^8.32.1",
     "@vitejs/plugin-react": "^4.4.1",
     "@vitest/coverage-v8": "^1.1.0",
+    "chalk": "^5.4.1",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
@@ -56,6 +68,9 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "happy-dom": "^12.10.3",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
+    "ora": "^8.2.0",
     "prettier": "^3.1.1",
     "sass": "^1.69.5",
     "typescript": "^5.3.3",

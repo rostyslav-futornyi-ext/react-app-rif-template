@@ -1,6 +1,6 @@
+import * as Toast from '@radix-ui/react-toast';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import * as Toast from '@radix-ui/react-toast';
 
 import { MainLayout } from '@/components/layout';
 import { Spinner } from '@/components/ui/Spinner';
@@ -8,7 +8,7 @@ import { Spinner } from '@/components/ui/Spinner';
 /**
  * Main application component that composes the app layout and routes
  */
-export const App = () => {
+export function App() {
   return (
     <Toast.Provider>
       <MainLayout>
@@ -25,4 +25,4 @@ export const App = () => {
       <Toast.Viewport className="toast-viewport" />
     </Toast.Provider>
   );
-};
+}

@@ -1,15 +1,16 @@
+import * as Tabs from '@radix-ui/react-tabs';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import * as Tabs from '@radix-ui/react-tabs';
 
 import { LoginForm } from '@/features/auth/components/LoginForm';
 import { useAuth } from '@/features/auth/hooks/useAuth';
+
 import styles from './Login.module.scss';
 
 /**
  * Login page component that provides user authentication
  */
-export const Login = () => {
+export function Login() {
   const navigate = useNavigate();
   const { login } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
@@ -53,6 +54,6 @@ export const Login = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Login;

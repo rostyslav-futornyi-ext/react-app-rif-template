@@ -1,16 +1,17 @@
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { ReactNode } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
 import rifLogo from '@/assets/logo.svg';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+
 import styles from './MainLayout.module.scss';
 
 interface MainLayoutProps {
   children: ReactNode;
 }
 
-export const MainLayout = ({ children }: MainLayoutProps) => {
+export function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className={styles.layout}>
       <header className={styles.header}>
@@ -64,6 +65,6 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
       </footer>
     </div>
   );
-};
+}
 
 export default MainLayout;

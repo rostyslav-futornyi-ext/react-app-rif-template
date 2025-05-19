@@ -1,8 +1,9 @@
-import { ReactElement, ReactNode } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render, RenderOptions } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { ReactElement, ReactNode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
 import { ThemeProvider } from '@/app/theme';
 
 /**
@@ -18,7 +19,7 @@ interface CustomRenderOptions extends Omit<RenderOptions, 'queries'> {
 /**
  * All providers wrapper component
  */
-export const AllProviders = ({ children }: { children: ReactNode }) => {
+export function AllProviders({ children }: { children: ReactNode }) {
   // Create a new QueryClient for each test
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -35,7 +36,7 @@ export const AllProviders = ({ children }: { children: ReactNode }) => {
       </QueryClientProvider>
     </BrowserRouter>
   );
-};
+}
 
 /**
  * Custom render function that wraps components with necessary providers

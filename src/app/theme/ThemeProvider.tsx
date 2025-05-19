@@ -20,7 +20,7 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+export function ThemeProvider({ children }: ThemeProviderProps) {
   // Initialize theme state from localStorage or system preference
   const [theme, setTheme] = useState<Theme>(() => {
     // Check if we're in the browser
@@ -67,4 +67,4 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   }, []);
 
   return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
-};
+}

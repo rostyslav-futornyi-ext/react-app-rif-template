@@ -9,9 +9,9 @@ export const loginUser = async ({
 }: {
   email: string;
   password: string;
-}): Promise<User> => {
+}): Promise<User> =>
   // This is a mock implementation - in a real app this would call an actual API
-  return new Promise((resolve, reject) => {
+  new Promise((resolve, reject) => {
     // Simulate network delay
     setTimeout(() => {
       // Simple validation
@@ -34,4 +34,3 @@ export const loginUser = async ({
       }
     }, 1000); // 1 second delay to simulate API call
   });
-};

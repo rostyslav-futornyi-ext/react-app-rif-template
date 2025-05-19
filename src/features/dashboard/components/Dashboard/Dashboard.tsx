@@ -3,12 +3,13 @@ import * as Tabs from '@radix-ui/react-tabs';
 
 import { StatCard } from '@/features/dashboard/components/StatCard';
 import { useStats } from '@/features/dashboard/hooks/useStats';
+
 import styles from './Dashboard.module.scss';
 
 /**
  * Dashboard component showing key information and statistics
  */
-export const Dashboard = () => {
+export function Dashboard() {
   const { stats, isLoading } = useStats();
 
   return (
@@ -103,6 +104,6 @@ export const Dashboard = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Dashboard;

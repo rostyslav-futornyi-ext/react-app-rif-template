@@ -4,12 +4,13 @@ import * as Tabs from '@radix-ui/react-tabs';
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/Button';
+
 import styles from './Profile.module.scss';
 
 /**
  * Profile page component
  */
-export const Profile = () => {
+export function Profile() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
@@ -139,6 +140,6 @@ export const Profile = () => {
       </Dialog.Root>
     </div>
   );
-};
+}
 
 export default Profile;

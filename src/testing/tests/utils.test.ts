@@ -1,15 +1,13 @@
 import { formatDate, formatCurrency, truncateText, formatFileSize } from '@/utils/format';
-import { isValidEmail, isStrongPassword } from '@/utils/validation';
 import { setStorageItem, getStorageItem, removeStorageItem } from '@/utils/storage';
+import { isValidEmail, isStrongPassword } from '@/utils/validation';
 
 // Mock localStorage for tests
 const localStorageMock = (() => {
   let store: Record<string, string> = {};
 
   return {
-    getItem: (key: string) => {
-      return store[key] || null;
-    },
+    getItem: (key: string) => store[key] || null,
     setItem: (key: string, value: string) => {
       store[key] = value;
     },

@@ -1,6 +1,7 @@
 import * as Tooltip from '@radix-ui/react-tooltip';
 
 import { Spinner } from '@/components/ui/Spinner';
+
 import styles from './StatCard.module.scss';
 
 export interface StatCardProps {
@@ -13,7 +14,7 @@ export interface StatCardProps {
 /**
  * StatCard component for displaying metrics with optional trend indicators
  */
-export const StatCard = ({ title, value, trend, isLoading = false }: StatCardProps) => {
+export function StatCard({ title, value, trend, isLoading = false }: StatCardProps) {
   // Determine trend direction styles
   const trendClass = trend ? (trend > 0 ? styles.trendUp : styles.trendDown) : '';
 
@@ -51,6 +52,6 @@ export const StatCard = ({ title, value, trend, isLoading = false }: StatCardPro
       </div>
     </div>
   );
-};
+}
 
 export default StatCard;

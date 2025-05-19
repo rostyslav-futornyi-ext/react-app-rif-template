@@ -1,12 +1,12 @@
-import { Link, useRouteError } from 'react-router-dom';
 import * as Alert from '@radix-ui/react-alert-dialog';
+import { Link, useRouteError } from 'react-router-dom';
 
 import { Button } from '@/components/ui/Button';
 
 /**
  * NotFound page that handles both 404s and other route errors
  */
-export const NotFound = () => {
+export function NotFound() {
   const error = useRouteError();
   const errorMessage = error instanceof Error ? error.message : 'Page not found';
 
@@ -28,6 +28,6 @@ export const NotFound = () => {
       </Alert.Root>
     </div>
   );
-};
+}
 
 export default NotFound;

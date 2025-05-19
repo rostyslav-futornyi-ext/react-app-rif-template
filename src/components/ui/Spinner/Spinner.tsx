@@ -15,7 +15,7 @@ export interface SpinnerProps extends HTMLAttributes<HTMLDivElement> {
 /**
  * Spinner component for loading states
  */
-export const Spinner = ({ size = 'md', className = '', ...rest }: SpinnerProps) => {
+export function Spinner({ size = 'md', className = '', ...rest }: SpinnerProps) {
   const spinnerClasses = [styles.spinner, styles[`spinner--${size}`], className]
     .filter(Boolean)
     .join(' ');
@@ -25,4 +25,4 @@ export const Spinner = ({ size = 'md', className = '', ...rest }: SpinnerProps) 
       <span className={styles.visuallyHidden}>Loading...</span>
     </div>
   );
-};
+}

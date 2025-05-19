@@ -26,12 +26,11 @@ export const formatDate = (
  * @param currency Currency code (default: USD)
  * @returns Formatted currency string
  */
-export const formatCurrency = (amount: number, currency = 'USD', locale = 'en-US'): string => {
-  return new Intl.NumberFormat(locale, {
+export const formatCurrency = (amount: number, currency = 'USD', locale = 'en-US'): string =>
+  new Intl.NumberFormat(locale, {
     style: 'currency',
     currency,
   }).format(amount);
-};
 
 /**
  * Truncate text to a specified length and add ellipsis
@@ -56,7 +55,7 @@ export const formatFileSize = (bytes: number, decimals = 2): string => {
   const k = 1024;
   const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB'];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
-  const formattedSize = parseFloat((bytes / Math.pow(k, i)).toFixed(decimals));
+  const formattedSize = parseFloat((bytes / k ** i).toFixed(decimals));
 
   return `${formattedSize} ${sizes[i]}`;
 };

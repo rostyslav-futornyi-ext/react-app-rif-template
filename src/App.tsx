@@ -1,5 +1,6 @@
-import { useState } from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
+import { useState } from 'react';
+
 import styles from './App.module.scss';
 import rifLogo from './assets/logo.svg';
 

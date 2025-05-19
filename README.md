@@ -31,6 +31,7 @@ This template provides a robust foundation for modern React applications with:
 - 🧰 **[Radix UI](https://www.radix-ui.com/)** - Accessible headless UI components
 - ✅ **[Vitest](https://vitest.dev/)** - Modern testing framework
 - 🔍 **[ESLint](https://eslint.org/) + [Prettier](https://prettier.io/)** - Code quality
+- 🐶 **[Husky](https://typicode.github.io/husky/)** - Git hooks for code quality
 - 📂 **Feature-oriented folder structure** - Organized scalable architecture
 - 🔄 **GitHub Actions** - CI/CD workflows
 
@@ -133,6 +134,7 @@ This template enforces high code quality standards with:
 - ESLint for code linting
 - Prettier for consistent formatting
 - TypeScript for type safety
+- Husky for pre-commit hooks
 - Test coverage thresholds to maintain test quality:
   ```json
   "thresholds": {
@@ -144,6 +146,25 @@ This template enforces high code quality standards with:
     }
   }
   ```
+
+### Git Hooks
+
+This project uses Husky to run pre-commit hooks that enforce code quality, with an enhanced visual experience:
+
+- **pre-commit**: Runs lint-staged and TypeScript checks with color-coded feedback
+
+The pre-commit hook ensures:
+- No ESLint errors in your code
+- TypeScript type checking passes 
+- Proper code formatting with Prettier
+
+The pre-commit process includes:
+- 🎨 Color-coded output for better visibility
+- 📊 Clear success/failure indicators
+- 🚀 Boxed formatting for important messages
+- 🔄 Compatible with the latest Husky version
+
+This prevents committing code with errors or incorrect types while providing a visually pleasing developer experience.
 
 ## 🧩 BEM Methodology
 
